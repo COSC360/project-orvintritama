@@ -39,7 +39,7 @@ We will be going to undertake the project *MyDiscussionForum Website*. In this p
 - Announcements and comments made by admin will have an **[ Admin ]** tag next to it for transparency
 - Admin can delete any user profile, i.e: if user is making inappropriate comments or posts, the user will have their account deleted.
 
-## General Website Functionalities
+## General Website Features and Details:
 Some other additional features in terms of the functional, design and responsiveness of general website will be implemented. In addition to posting the website on cosc360.ok.ubc.ca, our website will have the following features and design:
 
 ### Client Side:
