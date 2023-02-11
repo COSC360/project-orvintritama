@@ -10,7 +10,8 @@ We will be going to undertake the project *MyDiscussionForum Website*. In this p
 ## Functionalities by Users:
 ### 1. Shared Functionalities: These are functionalities that can be done by all 3 users
 - Read or view discussions through the homepage
-- Search for a post in the search box
+- Search for a discussion using the search box
+- Navigate around the page and search items in website using specific keywords
 - Sort based on most recent post (default) / popularity (upvote - downvote)
 
 *In addition to the shared functionalities, here are some general features/functionalities that can be performed by each user group*
