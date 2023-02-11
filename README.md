@@ -13,6 +13,8 @@ We will be going to undertake the project *MyDiscussionForum Website*. In this p
 - Search for a post in the search box
 - Sort based on most recent post (default) / popularity (upvote - downvote)
 
+*In addition to the shared functionalities, here are some general features/functionalities that can be performed by each user group*
+
 ### 2. Registered Users:
 - Login and Logout
 *Note: Registered users can only register for a new profile once logged out* 
