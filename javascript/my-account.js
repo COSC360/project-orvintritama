@@ -1,6 +1,6 @@
 window.onload = function() {
 
-    const element = document.getElementById("login-button");
+    const element = document.getElementById("my-account-edit-button");
 
     element.addEventListener("click", toggleInputAndValue);
 
