@@ -9,3 +9,7 @@
 .posts-container {
     margin-top: 10px;
 }
+
+.add-post-link {
+    text-decoration: none;
+}
