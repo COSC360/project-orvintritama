@@ -1,9 +1,5 @@
 # COSC 360 Project Proposal
 
-## Team Members:
-- Kate Naychuk
-- Orvin Tritama
-
 ## Project Description:
 We will be going to undertake the project *MyDiscussionForum Website*. In this project, we will be implementing a full-stack web application that mimics the functionalities of *Reddit* and (or) *HackerNews*. In general, with this web application, users will be able to engage in online discussions through posts of other users (or their own post). In practice, the users are divided into 3 categories: **Unregistered Users**, **Registered Users**, and **Administrator**. Some functionalities will be shared amongst all 3 categories; however, each category has some distinct functionalities that other categories may or may not be able to do. Below are the functionalities of the users: 
 
