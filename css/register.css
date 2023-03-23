@@ -10,3 +10,7 @@
 form input {
     width: 50%;
 }
+
+.red-border {
+    border-color: red;
+}

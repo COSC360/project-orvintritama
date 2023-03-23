@@ -12,8 +12,8 @@
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
-    <link rel="stylesheet" type="text/css" href="../css/reset.css">  
-    <link rel="stylesheet" type="text/css" href="../css/index.css"> 
+    <link rel="stylesheet" type="text/css" href="css/reset.css">  
+    <link rel="stylesheet" type="text/css" href="css/index.css"> 
  </head>    
 
 <body>
@@ -38,7 +38,7 @@
             <a class="nav-link" href="./login.html">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./register.html">Register</a>
+            <a class="nav-link" href="./register.php">Register</a>
           </li>
         </ul>
       </div>
@@ -96,7 +96,7 @@
                         
                         echo "<small class='text-muted'>Date: " . $row['postDate'] . "</small>
                         </h6>
-                        <p class='lead'>" . $row['postTitle'] . "</p>
+                        <p class='lead'>Title: " . $row['postTitle'] . "</p>
                         <p>" . $row['postContent'] . "</p>
                         <p><small><em>Category: " . $category -> getCategoryDescription() . "</em></small></p>
                         </div>
@@ -104,40 +104,6 @@
 
                 }
             ?>
-            
-    
-            <!-- <li class="list-group-item">
-              <div class="card-body">
-                <h6 class="font-weight-bold">Posted by: Person 2
-                  <small class="text-muted">Date: 20th February 2023</small>
-                </h6>
-                <p class="lead"> This is the title of the post 2. </p>
-                <p> This is the content of the post 2</p>
-                <p><small><em>Category: Cooking</em></small></p>
-              </div>
-            </li>
-
-            <li class="list-group-item">
-              <div class="card-body">
-                <h6 class="font-weight-bold"><b>Announcement by: [Admin 1]</b>
-                  <small class="text-muted">Date: 19th March 2017</small>
-                </h6>
-                <p class="lead"> This is the title of the post 3. </p>
-                <p> This is the content of the post 3</p>
-                <p><small><em>Category: <b>Announcement</b></em></small></p>
-              </div>
-            </li>
-
-            <li class="list-group-item">
-              <div class="card-body">
-                <h6 class="font-weight-bold">Posted by: Person 3
-                  <small class="text-muted">Date: 19th March 2017</small>
-                </h6>
-                <p class="lead"> This is the title of the post 3. </p>
-                <p> This is the content of the post 3</p>
-                <p><small><em>Category: Video Game</em></small></p>
-              </div>
-            </li> -->
           </ul>
         </div>
       </div>
