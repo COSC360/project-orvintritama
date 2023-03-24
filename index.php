@@ -3,12 +3,12 @@
     include("includes/classes/Category.php");
     include("includes/classes/User.php");
     include("includes/classes/Post.php");
+    // session_start();
 ?>
 
 <!DOCTYPE html>    
 <html>    
 <head>    
-
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
@@ -17,33 +17,9 @@
  </head>    
 
 <body>
-  <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <div class="container-fluid">
-
-      <a class="navbar-brand me-5" href="#">My Discussion Forum</a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      
-      <div class="collapse navbar-collapse" id="mynavbar">
-        <form class="d-flex w-50 me-auto">
-          <input class="form-control" type="text" placeholder="Search">
-          <button class="btn btn-primary ms-2" type="button">Search</button>
-        </form>
-
-        <ul class="navbar-nav me-2" id="login-register-button">
-          <li class="nav-item">
-            <a class="nav-link" href="./login.html">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./register.php">Register</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  
+  <!-- produce navigation bar based on Session (logged in or not) -->
+  <?php include("./includes/shared/navigation-bar.php")?>
 
   
   <!-- Body Container -->
@@ -76,36 +52,9 @@
             <button type="button" class="btn btn-outline-secondary">Newest</button>
           </div>
         </div>
+        
+        <?php include("./includes/shared/index-post-list.php")?>
 
-        <div class="card posts-container">
-          <h4 class="card-header">Posts</h4>
-          <ul class="list-group list-group-flush">
-            <?php
-                $postsQuery = mysqli_query($con, "SELECT * FROM post");
-                while($row = mysqli_fetch_array($postsQuery)) {
-                    $user = new User($con, $row['userId']);
-                    $category = new Category($con, $row['categoryId']);
-                    echo "<li class='list-group-item'> 
-                        <div class='card-body'>";
-                    
-                        if( $user->getType() == 1) {
-                            echo "<h6 class='font-weight-bold'>Posted by: " . $user -> getUsername() . "\t";
-                        } else if($user->getType() == 0) {
-                            echo "<h6 class='font-weight-bold'><b>Announcement By: " . $user -> getUsername() . "</b>\t";
-                        }
-                        
-                        echo "<small class='text-muted'>Date: " . $row['postDate'] . "</small>
-                        </h6>
-                        <p class='lead'>Title: " . $row['postTitle'] . "</p>
-                        <p>" . $row['postContent'] . "</p>
-                        <p><small><em>Category: " . $category -> getCategoryDescription() . "</em></small></p>
-                        </div>
-                        </li>";
-
-                }
-            ?>
-          </ul>
-        </div>
       </div>
     </div>
   </div>

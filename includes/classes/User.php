@@ -2,6 +2,7 @@
 class User {
     private $con;
     private $userId;
+    private $fullName;
     private $username;
     private $email;
     private $type;
@@ -15,6 +16,7 @@ class User {
         $query = mysqli_query($this->con, "SELECT * FROM user WHERE userId='$this->userId'");
 
         $this-> mysqldata = mysqli_fetch_array($query);
+        $this -> fullName = $this -> mysqldata['fullName'];
         $this -> username = $this->mysqldata['username'];
         $this -> email = $this->mysqldata['email'];
         $this -> type = $this->mysqldata['type'];
@@ -23,7 +25,11 @@ class User {
     public function getUsername() {
         return $this -> username;
     }
-    
+
+    public function getFullName() {
+        return $this -> fullName;
+    }
+
     public function getPassword() {
         return $this -> username;
     }
