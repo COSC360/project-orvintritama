@@ -3,6 +3,7 @@ class Post {
     private $con;
     private $postId;
     private $userId;
+    private $postTitle;
     private $postDate;
     private $postContent;
     private $categoryId;
@@ -19,12 +20,13 @@ class Post {
         $this-> mysqldata = mysqli_fetch_array($query);
         $this-> userId = $this-> mysqldata['userId'];
         $this-> postDate = $this-> mysqldata['postDate'];
-        $this-> postContent = $this-> mysqldata['content'];
+        $this -> postTitle = $this -> mysqldata['postTitle'];
+        $this-> postContent = $this-> mysqldata['postContent'];
         $this-> categoryId = $this-> mysqldata['categoryId'];
         $this-> likeCount = $this-> mysqldata['likeCount'];
     }
 
-    
+
     public function getUser() {
         return new User($this-> con, $this->userId);
     }
@@ -33,7 +35,7 @@ class Post {
         return new Category($this-> con, $this->categoryId);
     }
 
-    public function postDate() {
+    public function getPostDate() {
         return $this->postDate;
     }
 
@@ -41,7 +43,11 @@ class Post {
         return $this->postId;
     }
 
-    public function getContent() {
+    public function getPostTitle() {
+        return $this->postTitle;
+    }
+
+    public function getPostContent() {
         return $this->postContent;
     }
 

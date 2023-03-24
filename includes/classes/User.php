@@ -26,6 +26,10 @@ class User {
         return $this -> username;
     }
 
+    public function getUserId() {
+        return $this -> userId;
+    }
+    
     public function getFullName() {
         return $this -> fullName;
     }

@@ -68,7 +68,7 @@
                     echo "<div class='card-footer'>" . 
                     (!$isCurrentUserPost? "<button class='btn btn-primary btn-sm' disabled>Edit</button>": "<button class='btn btn-primary btn-sm'>Edit</button>" )
                     .    (!$isCurrentUserPost ? "<button class='btn btn-danger btn-sm' disabled>Delete</button>": "<button class='btn btn-danger btn-sm'>Delete</button>" )
-                    . "<button class='btn btn-primary btn-sm'>Comment</button>
+                    . "<button class='btn btn-primary btn-sm'><a href='http://localhost/project-orvintritama/post.php?postId=". $row['postId'] . "&userId=". $userId . "'>Comment</a></button>
                         <button class='btn btn-primary btn-sm'>Like</button>
                         <p>Like counter: " . $likeCounter . "</p>
                     </div>
