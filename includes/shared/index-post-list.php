@@ -20,7 +20,7 @@
     <?php if(isLoggedIn()) {
     echo "<h4 class='card-header'>Posts
         <button class='btn btn-primary'>
-            <a href='./static/add-post.html' class='link-light add-post-link'>Add Post</a>
+            <a href='./add-post.php' class='link-light add-post-link'>Add Post</a>
         </button>
     </h4>";
     }
