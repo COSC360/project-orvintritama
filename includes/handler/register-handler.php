@@ -15,7 +15,7 @@
         $count = $result['count'];
         if($count > 0) {
             echo "Username or e-mail already exists. Please create with another username/email";
-            echo "<a href='http://localhost/project-orvintritama/register.php'> Click here to redirect </a>";
+            echo "<a href='https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/register.php'> Click here to redirect </a>";
         } else {
 
             if($_FILES['profile-picture']['name'] !== "") {
@@ -43,7 +43,7 @@
 
             if($stmt->execute()) {
                 // echo "Created new user";
-                header("Location: http://localhost/project-orvintritama/login.php");
+                header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/login.php");
             } else {
                 echo "Fail to create new user";
             };

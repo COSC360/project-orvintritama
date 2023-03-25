@@ -160,8 +160,8 @@
                     if(isLoggedIn()) {
                         echo "<div class='card-footer'>" . 
                         // (!$isCurrentUserPost? "<button class='btn btn-primary btn-sm' disabled>Edit</button>": "<button class='btn btn-primary btn-sm'>Edit</button>" )
-                        (($isCurrentUserPost || $isAdmin )? "<a href='http://localhost/project-orvintritama/includes/handler/delete-post-handler.php?postId=". $row['postId'] . "'><button class='btn btn-danger btn-sm'>Delete</button></a>": "<button class='btn btn-danger btn-sm' disabled>Delete</button>" )
-                        . "<a href='http://localhost/project-orvintritama/post.php?postId=". $row['postId'] . "&userId=". $userId . "'><button class='btn btn-primary btn-sm comment-button'>Comment</button></a>
+                        (($isCurrentUserPost || $isAdmin )? "<a href='https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/includes/handler/delete-post-handler.php?postId=". $row['postId'] . "'><button class='btn btn-danger btn-sm'>Delete</button></a>": "<button class='btn btn-danger btn-sm' disabled>Delete</button>" )
+                        . "<a href='https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/post.php?postId=". $row['postId'] . "&userId=". $userId . "'><button class='btn btn-primary btn-sm comment-button'>Comment</button></a>
                         <button class='btn btn-primary btn-sm like-button'  value='". $row['postId'] ."'>Love this post!</button>
                         <p id='likeCounter-" . $row['postId'] ."'>Love Counter: " . $likeCounter . "</p>
                         </div>

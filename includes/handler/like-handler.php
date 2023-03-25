@@ -21,7 +21,6 @@
         $likeCounter = $likeRow['likeCounter'];
         // echo "Insert a new like";
         echo $likeCounter;
-        // header("Location: http://localhost/project-orvintritama/index.php");
     } else {
         echo "fail to insert";
     };

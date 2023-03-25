@@ -5,5 +5,5 @@
 
     session_destroy();
 
-    header("Location: http://localhost/project-orvintritama/index.php");
+    header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/index.php");
 ?>
