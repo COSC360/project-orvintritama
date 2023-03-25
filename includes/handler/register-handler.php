@@ -7,7 +7,8 @@
         $password = $_POST['password'];
         $email = $_POST['email'];
 
-        $values = '(\'' . $fullname . '\',\'' . $username . '\',\'' . $password . '\',\'' . $email .'\')';
+        $hashPassword = md5($password);
+        $values = '(\'' . $fullname . '\',\'' . $username . '\',\'' . $hashPassword . '\',\'' . $email .'\')';
         $insertQuery = "INSERT INTO user(fullName, username, password, email) VALUES" . $values;
 
         if(mysqli_query($con, $insertQuery)) {

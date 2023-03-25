@@ -8,10 +8,11 @@
         // echo $username;
         $password = $_POST['password'];
         // echo $password;
+        $hashPassword = md5($password);
         $query = "SELECT * FROM user WHERE username= ? AND password = ?";
 
         $stmt = $con->prepare($query); 
-        $stmt->bind_param("ss", $username, $password);
+        $stmt->bind_param("ss", $username, $hashPassword);
         $stmt->execute();
         
         $result = $stmt->get_result();
