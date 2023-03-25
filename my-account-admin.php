@@ -3,7 +3,7 @@
     include("includes/classes/Category.php");
     include("includes/classes/User.php");
     include("includes/classes/Post.php");
-
+    session_start();
     if(isset($_SESSION['userLoggedIn'])) {
         $userId = $_SESSION['userLoggedIn'];
         $user = new User($con, $userId);
@@ -30,10 +30,8 @@
     <div class="row">
 
       
-    <div class="col-3">
-    </div>
       <!-- Left Filter Container -->
-      <div class="col-6 statistics-container">
+      <div class="col-5 statistics-container">
         <div class="card">
           <h4 class="card-header">Admin Statistics</h4>
           <ul class="list-group list-group-flush">
@@ -44,8 +42,74 @@
           </ul>
         </div>
       </div>
-      <div class="col-3">
-    </div>
+
+      <!-- Main Container -->
+      <div class="col-7 ban-container">
+            <div class="card">
+                <h4 class="card-header">Welcome back, Admin 1!</h4>
+           
+                <form class="w-75 ban-user-form">
+                    <h5>Enter details to ban</h5>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="ban-user-search" placeholder="Enter username to be banned">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <input class="form-control" type="text" id="ban-user-description" placeholder="Enter reason here">
+                    </div>
+                    <br>
+                    <button class="btn btn-danger ms-2" type="button">Ban</button>
+                    
+                </form>
+
+                <ul class="list-group list-group-flush">
+                
+                    <li class="list-group-item">
+                        <h5>Users Ban List:</h5>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold">Username:
+                                <small class="text-muted">person1username</small>
+                            </h6>
+                            <h6 class="font-weight-bold">Date Banned:
+                                <small class="text-muted">20th February 2022</small>
+                            </h6>
+                            <h6 class="font-weight-bold">Reason:
+                                <small class="text-muted">This user is toxic</small>
+                            </h6>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold">Username:
+                                <small class="text-muted">person5username</small>
+                            </h6>
+                            <h6 class="font-weight-bold">Date Banned:
+                                <small class="text-muted">20th March 2022</small>
+                            </h6>
+                            <h6 class="font-weight-bold">Reason:
+                                <small class="text-muted">Spamming</small>
+                            </h6>
+                        </div>
+                    </li> <li class="list-group-item">
+                        <div class="card-body">
+                            <h6 class="font-weight-bold">Username:
+                                <small class="text-muted">person10username</small>
+                            </h6>
+                            <h6 class="font-weight-bold">Date Banned:
+                                <small class="text-muted">20th December 2019</small>
+                            </h6>
+                            <h6 class="font-weight-bold">Reason:
+                                <small class="text-muted">Too much spamming</small>
+                            </h6>
+                        </div>
+                    </li>
+        
+                </ul>
+            </div>
+      </div>
     </div>
   </div>
     

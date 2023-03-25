@@ -3,7 +3,7 @@
     include("includes/classes/Category.php");
     include("includes/classes/User.php");
     include("includes/classes/Post.php");
-
+    session_start();
     if(isset($_SESSION['userLoggedIn'])) {
         $userId = $_SESSION['userLoggedIn'];
         $user = new User($con, $userId);

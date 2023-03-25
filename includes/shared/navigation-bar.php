@@ -5,7 +5,8 @@
     if(isset($_SESSION['userLoggedIn'])) {
         $userId = $_SESSION['userLoggedIn'];
         $user = new User($con, $userId);
-    }
+        // echo "logged in"; 
+    } 
 
     function isLoggedIn() {
       if(isset($_SESSION['userLoggedIn'])) {

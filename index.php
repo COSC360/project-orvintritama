@@ -11,13 +11,13 @@
       $isAdmin = ($user -> getType()) == 0;
     }
     
-    // function isLoggedIn() {
-    //   if(isset($_SESSION['userLoggedIn'])) {
-    //     return true;
-    //   } else {
-    //     return false;
-    //   }
-    // }
+    function isLoggedIndex() {
+      if(isset($_SESSION['userLoggedIn'])) {
+        return true;
+      } else {
+        return false;
+      }
+    }
 ?>
 
 <!DOCTYPE html>    
@@ -30,35 +30,35 @@
     <link rel="stylesheet" type="text/css" href="css/reset.css">  
     <link rel="stylesheet" type="text/css" href="css/index.css"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="./javascript/like-ajax.js"></script>
-
+    <?php if(isLoggedIndex()) echo "
     <script>
     window.onload = function() {
     // get all buttons with like-button class name
-    let btn = document.getElementsByClassName("like-button");
+    let btn = document.getElementsByClassName('like-button');
     
     // Adding event listener to each button
     // Ajax call -> insert into like post and return the total likes of current post and update accordingly
     for(let i =0;i<btn.length; i++) {
-      btn[i].addEventListener("click", () => {
+      btn[i].addEventListener('click', () => {
           // Fetching Button value which is the postId
           let btnValue = btn[i].value;
           console.log(btnValue);
           
           $.ajax({
-              type: "POST",
-              url: "./includes/handler/like-handler.php",
-              data: { postId: btnValue, userId: <?php echo $userId?> },
+              type: 'POST',
+              url: './includes/handler/like-handler.php',
+              data: { postId: btnValue, userId:" . $userId. " },
               success: function (result) {
                 // each paragraph has id of likeCounter-postId, when like button is clicked, update by the value of count 
-                  let p = document.getElementById("likeCounter-" + btnValue);
-                  p.innerHTML = "Love Counter: " + result;
+                  let p = document.getElementById('likeCounter-' + btnValue);
+                  p.innerHTML = 'Love Counter: ' + result;
               }
         });
       });
       }
     }
-  </script>
+  </script>"
+  ?>
  </head>    
 
 <body>
