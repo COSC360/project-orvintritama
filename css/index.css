@@ -14,7 +14,7 @@
     text-decoration: none;
 }
 
-.post-button {
+.comment-button > a {
     text-decoration: none;
     color: white;
 }

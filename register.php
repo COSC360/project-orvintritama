@@ -24,16 +24,16 @@
             <div class="form-group">
                 <label for="username"><b>Username</b></label><br>
                 <input class="form-control" type="text" name="username" id="username" placeholder="Username" 
-                pattern="[a-zA-Z0-9]{6,15}"
-                title="Must contain only numbers, lowercase and uppercase letter, and has 6-15 characters long"
+                pattern="[a-zA-Z0-9]{5,15}"
+                title="Must contain only numbers, lowercase and uppercase letter, and has 5-15 characters long"
                 >
             </div>
             <br>
             <div class="form-group">
                 <label for="password"><b>Password</b></label><br>
                 <input class ="form-control" type="password" name="password" id="password" placeholder="Password"
-                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_\W]).{8,15}$" 
-                title="Must contain at least one number and one uppercase and lowercase letter, 1 special character and has 8-15 characters long"
+                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_\W]).{6,15}$" 
+                title="Must contain at least one number and one uppercase and lowercase letter, 1 special character and has 6-15 characters long"
                 >
             </div>
             <br>

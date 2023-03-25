@@ -11,9 +11,10 @@
             $categoryId = (int)($_POST['category']);
             $date = date("Y-m-d");
 
-            $values = '(' . $userId . ',CURDATE(),\'' . $postTitle . '\',\'' . $postContent . '\',' . $categoryId . ',  0)';
+            $values = '(' . $userId . ',CURDATE(),"' . $postTitle . '","' . $postContent . '",' . $categoryId . ',  0)';
 
             $query = "INSERT INTO post(userId, postDate, postTitle, postContent, categoryId, likeCount) VALUES" . $values;
+
             if(mysqli_query($con, $query)) {
                 // echo "Created new post";
                 header("Location: http://localhost/project-orvintritama/index.php");

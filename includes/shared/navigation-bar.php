@@ -27,9 +27,9 @@
       </button>
       
       <div class="collapse navbar-collapse" id="mynavbar">
-        <form class="d-flex w-50 me-auto">
-          <input class="form-control" type="text" placeholder="Search">
-          <button class="btn btn-primary ms-2" type="button">Search</button>
+        <form class="d-flex w-50 me-auto" method="get" action="http://localhost/project-orvintritama/includes/handler/search-post-handler.php">
+          <input class="form-control" type="text" name="searchText" placeholder="Search">
+          <button class="btn btn-primary ms-2" type="submit">Search</button>
         </form>
 
         <?php if(!isLoggedIn()) {
@@ -47,9 +47,14 @@
         <?php if(isLoggedIn()) {
           echo '
           <ul class="navbar-nav me-2" id="login-register-button">
-            <li class="nav-item">
-                <a class="nav-link" href="./my-account.php">' . $user->getFullName() . '- My Account </a>
-            </li>
+            <li class="nav-item">'; 
+            if($user -> getType() == 0) {
+              echo "<a class='nav-link' href='./my-account-admin.php'>" . $user->getFullName() . "- My Account </a>";
+            } else {
+              echo "<a class='nav-link' href='./my-account.php'>" . $user->getFullName() . "- My Account </a>";
+            }
+            
+          echo '</li>
             <li class="nav-item">
                 <a class="nav-link" href="./includes/handler/logout-handler.php">Logout</a>
             </li>

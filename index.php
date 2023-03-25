@@ -27,35 +27,11 @@
     <div class="row">
 
       
-      <!-- Left Filter Container -->    
-      <div class="col-3 filter-container">
-        <div class="card">
-          <h4 class="card-header"> Topics</h4>
-          <ul class="list-group list-group-flush">
-            <?php
-                $categoryQuery = mysqli_query($con, "SELECT * FROM category");
-                while($row = mysqli_fetch_array($categoryQuery)) {
-                    echo "<a href='#' class='list-group-item list-group-item-action'>"
-                            . $row['categoryDescription'] . "</a>";
-                }
-            ?>
-          </ul>
-        </div>
-      </div>
+      
 
-      <!-- Main Container -->
-      <div class="col-9 main-container">
-        <div class="card">
-          <h4 class="card-header">Sort by:</h4>
-          <div class="card-body">
-            <button type="button" class="btn btn-outline-primary">Popularity</button>
-            <button type="button" class="btn btn-outline-secondary">Newest</button>
-          </div>
-        </div>
-        
+
         <?php include("./includes/shared/index-post-list.php")?>
-
-      </div>
+      
     </div>
   </div>
     
