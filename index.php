@@ -129,18 +129,18 @@
                 // check if the post is created by the current logged in User or if the user is admin
                 if( isLoggedIn()) {
                     $isCurrentUserPost = ($row['userId'] == $userId);
+                
+                  // get the like Counter using the current post ID from likePost table when the page loaded
+                  $countLikeQuery = mysqli_query($con, "SELECT COUNT(*) as likeCounter FROM likepost WHERE postId=" . $row['postId']);
+                  $likeRow = mysqli_fetch_array($countLikeQuery);
+                  $likeCounter = $likeRow['likeCounter'];
+                  
+                  $userLikedQuery = mysqli_query($con, "SELECT COUNT(*) as hasLiked FROM likepost WHERE postId=" . $row['postId'] . " AND userId=" . $userId);
+                  $likeRow = mysqli_fetch_array($userLikedQuery);
+                  $userLikeCounter = $likeRow['hasLiked'];
+                  
+                  $hasCurrentUserLiked = ($userLikeCounter == 1);
                 }
-                // get the like Counter using the current post ID from likePost table when the page loaded
-                $countLikeQuery = mysqli_query($con, "SELECT COUNT(*) as likeCounter FROM likepost WHERE postId=" . $row['postId']);
-                $likeRow = mysqli_fetch_array($countLikeQuery);
-                $likeCounter = $likeRow['likeCounter'];
-                
-                $userLikedQuery = mysqli_query($con, "SELECT COUNT(*) as hasLiked FROM likepost WHERE postId=" . $row['postId'] . " AND userId=" . $userId);
-                $likeRow = mysqli_fetch_array($userLikedQuery);
-                $userLikeCounter = $likeRow['hasLiked'];
-                
-                $hasCurrentUserLiked = ($userLikeCounter == 1);
-
                 echo "<li class='list-group-item'> 
                     <div class='card-body'>";
                 
