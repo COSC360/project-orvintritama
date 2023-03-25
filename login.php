@@ -11,7 +11,7 @@
 </head>    
 
 <body>
-  
+    <?php include("./includes/shared/navigation-bar.php")?>
     <div class="login-container">
         
         <h2>Login Page</h2>

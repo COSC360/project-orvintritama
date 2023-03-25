@@ -24,6 +24,7 @@
             header("Location: http://localhost/project-orvintritama/index.php");
         } else {
             echo "user not found";
+            echo "<a href='http://localhost/project-orvintritama'>Click to return to main menu</a>";
             // header("Location: http://localhost/project-orvintritama/index.php");
         }
     }

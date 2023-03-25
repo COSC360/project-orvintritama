@@ -94,10 +94,10 @@
                     
                     if(isLoggedIn()) {
                         echo "<div class='card-footer'>" . 
-                        (!$isCurrentUserPost? "<button class='btn btn-primary btn-sm' disabled>Edit</button>": "<button class='btn btn-primary btn-sm'>Edit</button>" )
-                        .(($isCurrentUserPost || $isAdmin )? "<a href='http://localhost/project-orvintritama/includes/handler/delete-post-handler.php?postId=". $row['postId'] . "'><button class='btn btn-danger btn-sm'>Delete</button></a>": "<button class='btn btn-danger btn-sm' disabled>Delete</button>" )
+                        // (!$isCurrentUserPost? "<button class='btn btn-primary btn-sm' disabled>Edit</button>": "<button class='btn btn-primary btn-sm'>Edit</button>" )
+                        (($isCurrentUserPost || $isAdmin )? "<a href='http://localhost/project-orvintritama/includes/handler/delete-post-handler.php?postId=". $row['postId'] . "'><button class='btn btn-danger btn-sm'>Delete</button></a>": "<button class='btn btn-danger btn-sm' disabled>Delete</button>" )
                         . "<a href='http://localhost/project-orvintritama/post.php?postId=". $row['postId'] . "&userId=". $userId . "'><button class='btn btn-primary btn-sm comment-button'>Comment</button></a>
-                            <button class='btn btn-primary btn-sm'>Like</button>
+                            <button class='btn btn-primary btn-sm' id='like-button' value='". $row['postId'] ."'>Like</button>
                             <p>Like counter: " . $likeCounter . "</p>
                         </div>
                         </li>";
