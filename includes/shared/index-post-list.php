@@ -5,6 +5,7 @@
     if(isset($_SESSION['userLoggedIn'])) {
         $userId = $_SESSION['userLoggedIn'];
         $user = new User($con, $userId);
+        $isAdmin = ($user -> getType()) == 0;
     }
 
     // function isLoggedIn() {
@@ -66,7 +67,7 @@
                 $category = new Category($con, $row['categoryId']);
 
                 $isCurrentUserPost; 
-                // check if the post is created by the current logged in User
+                // check if the post is created by the current logged in User or if the user is admin
                 if( isLoggedIn()) {
                     $isCurrentUserPost = ($row['userId'] == $userId);
                 }
@@ -94,7 +95,7 @@
                     if(isLoggedIn()) {
                         echo "<div class='card-footer'>" . 
                         (!$isCurrentUserPost? "<button class='btn btn-primary btn-sm' disabled>Edit</button>": "<button class='btn btn-primary btn-sm'>Edit</button>" )
-                        .    (!$isCurrentUserPost ? "<button class='btn btn-danger btn-sm' disabled>Delete</button>": "<button class='btn btn-danger btn-sm'>Delete</button>" )
+                        .(($isCurrentUserPost || $isAdmin )? "<a href='http://localhost/project-orvintritama/includes/handler/delete-post-handler.php?postId=". $row['postId'] . "'><button class='btn btn-danger btn-sm'>Delete</button></a>": "<button class='btn btn-danger btn-sm' disabled>Delete</button>" )
                         . "<a href='http://localhost/project-orvintritama/post.php?postId=". $row['postId'] . "&userId=". $userId . "'><button class='btn btn-primary btn-sm comment-button'>Comment</button></a>
                             <button class='btn btn-primary btn-sm'>Like</button>
                             <p>Like counter: " . $likeCounter . "</p>
