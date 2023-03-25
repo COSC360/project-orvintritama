@@ -3,7 +3,7 @@
     include("includes/classes/Category.php");
     include("includes/classes/User.php");
     include("includes/classes/Post.php");
-    // session_start();
+    session_start();
 
     if($_SERVER['REQUEST_METHOD'] = 'GET') {
         $postId = $_GET['postId'];
