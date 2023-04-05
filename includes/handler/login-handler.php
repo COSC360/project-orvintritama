@@ -22,10 +22,10 @@
             // start session sending $userId 
             $_SESSION['userLoggedIn'] = $row['userId'];
             // echo $row['fullName'];
-            header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/index.php");
+            header("Location: http://localhost/project-orvintritama/index.php");
         } else {
             echo "user not found";
-            echo "<a href='https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama'>Click to return to main menu</a>";
+            echo "<a href='http://localhost/project-orvintritama'>Click to return to main menu</a>";
         }
     }
 ?>

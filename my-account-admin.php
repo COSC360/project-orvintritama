@@ -48,64 +48,46 @@
             <div class="card">
                 <h4 class="card-header">Welcome back, Admin 1!</h4>
            
-                <form class="w-75 ban-user-form">
-                    <h5>Enter details to ban</h5>
+                <form class="w-75 ban-user-form" method="POST" action="./includes/handler/delete-user-handler.php">
+                    <h5>Enter details to delete</h5>
                     <div class="form-group">
-                        <input class="form-control" type="text" id="ban-user-search" placeholder="Enter username to be banned">
+                        <input class="form-control" name="username" type="text" id="ban-user-search" placeholder="Enter username to be banned">
                     </div>
                     <br>
                     <div class="form-group">
-                        <input class="form-control" type="text" id="ban-user-description" placeholder="Enter reason here">
+                        <input class="form-control" name="reason" type="text" id="ban-user-description" placeholder="Enter reason here">
                     </div>
                     <br>
-                    <button class="btn btn-danger ms-2" type="button">Ban</button>
-                    
+                    <input type="submit" class="btn btn-danger ms-2" type="button" value="Delete"></button>
                 </form>
 
                 <ul class="list-group list-group-flush">
                 
                     <li class="list-group-item">
-                        <h5>Users Ban List:</h5>
+                        <h5>Deleted Users List:</h5>
                     </li>
                     
-                    <li class="list-group-item">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold">Username:
-                                <small class="text-muted">person1username</small>
+                    <?php
+                    $findBanUserQuery = mysqli_query($con, "SELECT * FROM deleteuser");
+                    while($row = mysqli_fetch_array($findBanUserQuery)) {
+
+                        echo "<li class='list-group-item'>
+                        <div class='card-body'>
+                            <h6 class='font-weight-bold'>Username:
+                                <small class='text-muted'>" . $row['username'] ."</small>
                             </h6>
-                            <h6 class="font-weight-bold">Date Banned:
-                                <small class="text-muted">20th February 2022</small>
+                            <h6 class='font-weight-bold'>Date Banned:
+                                <small class='text-muted'>" . $row['deleteDate'] . "</small>
                             </h6>
-                            <h6 class="font-weight-bold">Reason:
-                                <small class="text-muted">This user is toxic</small>
-                            </h6>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold">Username:
-                                <small class="text-muted">person5username</small>
-                            </h6>
-                            <h6 class="font-weight-bold">Date Banned:
-                                <small class="text-muted">20th March 2022</small>
-                            </h6>
-                            <h6 class="font-weight-bold">Reason:
-                                <small class="text-muted">Spamming</small>
+                            <h6 class='font-weight-bold'>Reason:
+                                <small class='text-muted'>" . $row['deleteReason'] . "</small>
                             </h6>
                         </div>
-                    </li> <li class="list-group-item">
-                        <div class="card-body">
-                            <h6 class="font-weight-bold">Username:
-                                <small class="text-muted">person10username</small>
-                            </h6>
-                            <h6 class="font-weight-bold">Date Banned:
-                                <small class="text-muted">20th December 2019</small>
-                            </h6>
-                            <h6 class="font-weight-bold">Reason:
-                                <small class="text-muted">Too much spamming</small>
-                            </h6>
-                        </div>
-                    </li>
+                    </li>";
+                    }
+            
+                    ?>
+                
         
                 </ul>
             </div>

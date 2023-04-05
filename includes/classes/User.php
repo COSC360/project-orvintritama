@@ -22,6 +22,7 @@ class User {
         $this -> type = $this->mysqldata['type'];
     }
 
+
     public function getUsername() {
         return $this -> username;
     }

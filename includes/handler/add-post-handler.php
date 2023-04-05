@@ -17,7 +17,7 @@
 
             if(mysqli_query($con, $query)) {
                 // echo "Created new post";
-                header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/index.php");
+                header("Location: http://localhost/project-orvintritama/index.php");
             } else {
                 echo "fail to insert";
             };
