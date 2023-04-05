@@ -153,7 +153,7 @@
                     echo "<small class='text-muted'>Date: " . $row['postDate'] . "</small>
                     </h6>
                     <p class='lead'>Title: " . $row['postTitle'] . "</p>
-                    <p>" . $row['postContent'] . "</p>
+                    <p>Content: " . $row['postContent'] . "</p>
                     <p><small><em>Category: " . $category -> getCategoryDescription() . "</em></small></p>
                     </div>";
                     
