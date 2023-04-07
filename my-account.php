@@ -61,7 +61,7 @@
 
             <div class="col-7">
                 <div class="card posts-container">
-                    <h4 class='card-header'>Posts</h4>
+                    <h4 class='card-header'>My Posts</h4>
         
                     <ul class='list-group list-group-flush'>
                         <?php 

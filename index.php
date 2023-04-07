@@ -115,7 +115,7 @@
                 $category = new Category($con, $categoryId);
                 $postsQuery = mysqli_query($con, "SELECT * FROM post WHERE categoryId='$categoryId' ORDER by postDate DESC");
             } else if(isset($_GET['searchText'])) {
-                $postsQuery = mysqli_query($con, "SELECT * FROM post WHERE postContent LIKE '%" . $_GET['searchText'] . "%' ORDER by postDate DESC");
+                $postsQuery = mysqli_query($con, "SELECT * FROM post WHERE postTitle LIKE '%" . $_GET['searchText'] . "%' ORDER by postDate DESC");
             } else {
                 $postsQuery = mysqli_query($con, "SELECT * FROM post ORDER by postDate DESC");
             }

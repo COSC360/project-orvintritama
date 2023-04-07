@@ -29,7 +29,7 @@
       
       <div class="collapse navbar-collapse" id="mynavbar">
         <form class="d-flex w-50 me-auto" method="get" action="http://localhost/project-orvintritama/includes/handler/search-post-handler.php">
-          <input class="form-control" type="text" name="searchText" placeholder="Search">
+          <input class="form-control" type="text" name="searchText" placeholder="Search by post title..">
           <button class="btn btn-primary ms-2" type="submit">Search</button>
         </form>
 
