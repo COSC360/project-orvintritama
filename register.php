@@ -47,12 +47,7 @@
                 <input class="form-control" type="email" name="email" id="email" placeholder="E-mail">
             </div>
             <br>
-            <div class="form-group">
-                <input type="hidden" name="MAX_FILE_SIZE" value="1000000">
-                <label for="image"><b>Profile Picture</b></label><br>    
-                <input class="form-control" type="file" name="profile-picture" id="profile-picture" placeholder="E-mail">
-            </div>
-            <br>
+            
             <button class="btn btn-primary" type="submit" name="register" id="register-button">Register</button>     
         </form>     
 

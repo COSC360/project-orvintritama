@@ -26,14 +26,10 @@
     
     <?php include("./includes/shared/navigation-bar.php") ?>
 
-    <div class="container-fluid">
+    <div class="main-container container-fluid">
         <div class="row">
-            <!-- Left Padding Container -->
-            <div class="col-2">
-            </div>
 
-            <!-- Main Container -->
-            <div class="col-8 main-container">
+            <div class="col-5 left-container">
                 <div class="card posts-container">
                     <h4 class="card-header d-flex justify-content-between align-items-center">
                         Welcome back to your account, <?php echo $user-> getFullName() ?>
@@ -63,8 +59,31 @@
                 </div>
             </div>
 
-            <!-- Right Padding Container -->
-            <div class="col-2">
+            <div class="col-7">
+                <div class="card posts-container">
+                    <h4 class='card-header'>Posts</h4>
+        
+                    <ul class='list-group list-group-flush'>
+                        <?php 
+                        $postsQuery = mysqli_query($con, "SELECT * FROM post WHERE userId='$userId' ORDER by postDate DESC");
+                        while($row = mysqli_fetch_array($postsQuery)) {
+                            $category = new Category($con, $row['categoryId']);
+                            echo "<li class='list-group-item'> 
+                                <div class='card-body'>
+                                    <h6 class='font-weight-bold'>Posted by: " . $user -> getUsername() . "\t" .
+                                    "<small class='text-muted'>Date: " . $row['postDate'] . "</small>
+                                    </h6>
+                                    <p class='lead'>Title: " . $row['postTitle'] . "</p>
+                                    <p>Content: " . $row['postContent'] . "</p>
+                                    <p><small><em>Category: " . $category -> getCategoryDescription() . "</em></small></p>
+                                    <div class='card-footer'>
+                                        <a href='http://localhost/project-orvintritama/includes/handler/delete-post-handler.php?postId=". $row['postId'] . "'><button class='btn btn-danger btn-sm'>Delete</button></a>
+                                    </div>
+                                </div>";
+                        }
+                        ?>
+                    </ul>
+                </div>
             </div>
         </div>
 </body>    

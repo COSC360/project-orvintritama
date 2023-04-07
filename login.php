@@ -31,9 +31,6 @@
             <br>
            
             <button class="btn btn-primary" type="submit" name="login" id="login-button">Login</button>     
-            
-            <br>
-            <p> Forgot your password? <a href="forgot-password.html">Recover Here</a></p>
         </form>     
 
     </div>    
