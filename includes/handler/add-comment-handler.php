@@ -11,7 +11,7 @@
         $query = "INSERT into comment(postId, commentContent, userId) VALUES('$postId', '$commentContent', '$userId')";
         if(mysqli_query($con, $query)) {
             // echo "Updated post";
-            header("Location: http://localhost/project-orvintritama/post.php?postId=" . $postId . "&userId=" . $userId);
+            header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/post.php?postId=" . $postId . "&userId=" . $userId);
         } else {
             echo "fail to update";
         };

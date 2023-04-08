@@ -77,7 +77,7 @@
                                     <p>Content: " . $row['postContent'] . "</p>
                                     <p><small><em>Category: " . $category -> getCategoryDescription() . "</em></small></p>
                                     <div class='card-footer'>
-                                        <a href='http://localhost/project-orvintritama/includes/handler/delete-post-handler.php?postId=". $row['postId'] . "'><button class='btn btn-danger btn-sm'>Delete</button></a>
+                                        <a href='https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/includes/handler/delete-post-handler.php?postId=". $row['postId'] . "'><button class='btn btn-danger btn-sm'>Delete</button></a>
                                     </div>
                                 </div>";
                         }

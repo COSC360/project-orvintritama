@@ -1,13 +1,13 @@
 <?php
-// $servername = "cosc360.ok.ubc.ca";
-// $username = "85707669";
-// $password = "85707669";
-// $name = "db_85707669";
+$servername = "cosc360.ok.ubc.ca";
+$username = "85707669";
+$password = "85707669";
+$name = "db_85707669";
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$name = "cosc360";
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $name = "cosc360";
 
 // Create connection
 $con = new mysqli($servername, $username, $password, $name);

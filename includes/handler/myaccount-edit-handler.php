@@ -14,7 +14,7 @@
             $query = "UPDATE user SET username='$username', fullName= '$fullname' WHERE userId='$userId'";
             if(mysqli_query($con, $query)) {
                 // echo "Updated post";
-                header("Location: http://localhost/project-orvintritama/my-account.php");
+                header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/my-account.php");
             } else {
                 echo "fail to update";
             };

@@ -1,7 +1,8 @@
 <?php
     include("../db.php");
     session_start();
-
+    
+    
     $response = [];
     
     $countUserQuery = mysqli_query($con, "SELECT COUNT(*) as userCount FROM user");     

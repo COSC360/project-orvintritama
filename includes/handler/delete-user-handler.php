@@ -2,7 +2,6 @@
     include("../db.php");
 
     session_start();
-    
     if($_SERVER['REQUEST_METHOD'] = 'POST') {
         $username = $_POST['username'];
         $reason = $_POST['reason'];
@@ -34,12 +33,12 @@
 
             if(mysqli_query($con, $query) ) {
                 // echo "Created new post";
-                header("Location: http://localhost/project-orvintritama/my-account-admin.php");
+                header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/my-account-admin.php");
             } else {
                 echo "fail to insert";
             };
         } else {
-            header("Location: http://localhost/project-orvintritama/my-account-admin.php");
+            header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/my-account-admin.php");
         }
 
        

@@ -8,9 +8,9 @@
         $searchText = $_GET['searchText'];
 
         if($searchText == "") {
-            header("Location: http://localhost/project-orvintritama/index.php");
+            header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/index.php");
         } else {
-            header("Location: http://localhost/project-orvintritama/index.php?searchText=" . $searchText );
+            header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/index.php?searchText=" . $searchText );
         }
     }
 ?>

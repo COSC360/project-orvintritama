@@ -4,6 +4,7 @@
     include("includes/classes/User.php");
     include("includes/classes/Post.php");
     session_start();
+
     if(isset($_SESSION['userLoggedIn'])) {
         $userId = $_SESSION['userLoggedIn'];
         $user = new User($con, $userId);
@@ -17,10 +18,46 @@
     <title>My Account - Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="./javascript/admin-statistics-ajax.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="css/reset.css">  
     <link rel="stylesheet" type="text/css" href="css/my-account-admin.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <!-- <script src="./javascript/admin-statistics-ajax.js"></script> -->
+    <script>
+    window.onload = function() {
+    console.log("Test");
+    // $(document).delegate("#btnBasicResponse", "click", function() {
+
+        // Ajax config
+        $.ajax({
+            url: './includes/handler/admin-statistics-handler.php', // get the route value
+            success: function (response) {//once the request successfully process to the server side it will return result here
+                //parse json
+                response = JSON.parse(response);
+                // console.log(response);
+                let date = response[0];
+                let userCount = response[1];
+                let deletedUserCount = response[2];
+                
+                
+                let p = document.getElementById('date');
+                p.innerHTML = "Current Date: " + date;
+
+                p = document.getElementById('userCount');
+                p.innerHTML = "Total User Registered: " + userCount;
+
+                p = document.getElementById('deletedUserCount');
+                p.innerHTML = "Total User Deleted: " +deletedUserCount;
+            }
+        });
+
+    // });
+
+    };
+        </script>
+
+
+    
  </head>    
 
 <body>

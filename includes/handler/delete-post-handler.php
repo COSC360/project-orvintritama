@@ -13,7 +13,7 @@
 
             if(mysqli_query($con, $query) && mysqli_query($con, $query2)) {
                 // echo "Deleted post";
-                header("Location: http://localhost/project-orvintritama/index.php");
+                header("Location: https://cosc360.ok.ubc.ca/orvinrfc/project-orvintritama/index.php");
             } else {
                 echo "fail to delete";
             };

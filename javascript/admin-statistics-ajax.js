@@ -4,7 +4,7 @@ $(document).ready(function(){
 
             // Ajax config
             $.ajax({
-                url: './includes/handler/admin-statistics-handler.php', // get the route value
+                url: '../includes/handler/admin-statistics-handler.php', // get the route value
                 success: function (response) {//once the request successfully process to the server side it will return result here
                     //parse json
                     response = JSON.parse(response);
